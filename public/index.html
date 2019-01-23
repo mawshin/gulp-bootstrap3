@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
 
-	<title>The Hour Glass 40th Anniversary MAW</title>
+	<title>The Hour Glass 40th Anniversary</title>
     
     <link rel="stylesheet" type="text/css" href="css/styles.css"/>
 </head>
@@ -31,11 +31,39 @@
     </div><!-- /.modal -->
 
     <div class="container">
-        <!-- start: Header section -->
-        <header class="header clearfix">
-            <div class="c-logo">D</div>
-            <div class="c-project-title">Project name</div>
-        </header>
+        <!-- start: Navbar section -->
+        <nav class="navbar">
+            <div class="container">
+                <div class="c-navbar">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="c-logo" href="#">The Hour Glass</a>
+                </div>
+                <div id="navbar" class="c-navbar--links navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li class="dropdown-header">Nav header</li>
+                                <li><a href="#">Separated link</a></li>
+                                <li><a href="#">One more separated link</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
         
         <!-- start: Carousel -->
         <section class="row">
@@ -269,6 +297,5 @@
         (c) The Hour Glass 2019
     </footer>
 
-    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
-	<script src="js/app.js"></script>
+	<script src="js/app.min.js"></script>
 </body>

@@ -106,7 +106,7 @@ gulp.task('sass', ['scss-lint'], function () {
     return merge(scssStream, cssStream)
         .pipe(concat('styles.css'))
         .pipe(sourcemaps.init())
-        .pipe(cssmin())
+        // .pipe(cssmin())
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('public/css/'))
         //.pipe(browserSync.stream());
@@ -131,9 +131,9 @@ gulp.task('sass-prod', function () {
 gulp.task('scripts', function () {
     return gulp.src(['dev/js/lib/jquery-3.0.0.min.js', 'dev/js/lib/jquery-migrate-3.0.0.min.js', 'dev/js/lib/bootstrap.min.js', 'dev/js/lib/ie10-viewport-bug-workaround.js','dev/js/lib/rem.js', 'dev/js/init.js'])
         .pipe(concat('app.min.js'))
-        .pipe(gulp.dest('dev/js/'))
-        .pipe(newer('public/js/'))
-        .pipe(rename('app.min.js'))
+        // .pipe(gulp.dest('dev/js/'))
+        // .pipe(newer('public/js/'))
+        // .pipe(rename('app.min.js'))
         .pipe(gulp.dest('public/js/'))
         .pipe(browserSync.stream());
         // .pipe(browserSync.reload({stream: true}));
@@ -164,7 +164,7 @@ gulp.task('copy-files', function() {
 });
 
 gulp.task('sync', function() {
-    gulp.src(['dev/*', '!dev/{sass,sass/**}', '!dev/js/{init.js,lib/**}'])
+    gulp.src(['dev/*', 'dev/**/*', '!dev/{sass,sass/**}', '!dev/js/{init.js,lib/**}'])
         .pipe(newer('public/'))
         .pipe(gulp.dest('public/'))
         .pipe(browserSync.stream());
@@ -181,10 +181,11 @@ gulp.task('watch', function () {
     gulp.watch(['dev/js/**/*'], ['scripts']);
     //gulp.watch(['dev/js/app.min.js'], ['sync']);
     gulp.watch(['dev/images/*', 'dev/images/**/*'], ['sync']);
+    gulp.watch(['dev/fonts/*'], ['sync']);
     gulp.watch(['dev/*.html'], ['sync']);
     //gulp.watch(['dev/**/*', '!dev/{sass,sass/**}'], ['sync']);
 
-    var watcher = gulp.watch(['dev/**/*', '!dev/{sass,sass/**}', '!dev/css/styles.css', '!dev/css/global.css.map', '!dev/js/init.js']);
+    var watcher = gulp.watch(['dev/*', 'dev/**/*', '!dev/{sass,sass/**}', '!dev/css/styles.css', '!dev/css/global.css.map', '!dev/js/init.js']);
     watcher.on('change', function(ev) {
          if(ev.type === 'deleted') {
             /**
