@@ -1,0 +1,321 @@
+// ==========
+// Generic
+// ==========
+.container {
+    @include mappy-bp(xlarge) {
+        width: 768px;
+    }
+    
+    @include mappy-bp(xxl) {
+        width: 992px;
+    }
+
+    @include mappy-bp(xxxl) {
+        width: 1270px;
+    }
+
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+}
+
+.row {
+    @include cf;
+
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.col-md-6 {
+    @include mappy-bp(large) {
+        @include with-layout($grid-12) {
+            @include span(6 of 12);
+        }
+    }
+
+    @include span(12 of 12);
+
+    &:last-child {
+        @include mappy-bp(large) {
+            @include with-layout($grid-12) {
+                @include span(6 of 12 last);
+            }
+        }
+    }
+}
+
+.col-md-4 {
+    @include mappy-bp(large) {
+        @include with-layout($grid-12) {
+            @include span(4 of 12);
+        }
+    }
+
+    @include span(12 of 12);
+}
+
+.col-md-8 {
+    @include mappy-bp(large) {
+        @include with-layout($grid-12) {
+            @include span(8 of 12);
+        }
+    }
+
+    @include span(12 of 12);
+
+    &:last-child {
+        @include mappy-bp(large) {
+            @include with-layout($grid-12) {
+                @include span(8 of 12 last);
+            }
+        }
+    }
+}
+
+.col-md-3 {
+    @include mappy-bp(large) {
+        @include with-layout($grid-12) {
+            @include span(3 of 12);
+        }
+    }
+
+    @include span(12 of 12);
+
+    &:last-child {
+        @include mappy-bp(large) {
+            @include with-layout($grid-12) {
+                @include span(3 of 12 last);
+            }
+        }
+    }
+}
+
+.col-md-9 {
+    @include mappy-bp(large) {
+        @include with-layout($grid-12) {
+            @include span(9 of 12);
+        }
+    }
+
+    @include span(12 of 12);
+
+    &:last-child {
+        @include mappy-bp(large) {
+            @include with-layout($grid-12) {
+                @include span(9 of 12 last);
+            }
+        }
+    }
+}
+
+.col-md-2 {
+    @include mappy-bp(large) {
+        @include with-layout($grid-12) {
+            @include span(2 of 12);
+        }
+    }
+
+    @include span(12 of 12);
+}
+
+.col-md-10 {
+    @include mappy-bp(large) {
+        @include with-layout($grid-12) {
+            @include span(10 of 12);
+        }
+    }
+
+    @include span(12 of 12);
+
+    &:last-child {
+        @include mappy-bp(large) {
+            @include with-layout($grid-12) {
+                @include span(10 of 12 last);
+            }
+        }
+    }
+}
+
+.col-xs-12 {
+    @include with-layout($grid-12) {
+        @include span(12 of 12);
+    }
+}
+
+.img-responsive {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+}
+
+.c-btn-default {
+	color: white;
+    display: inline-block;
+	font-weight: normal;
+	padding: 1rem 1.875rem;
+	text-transform: uppercase;
+	border: 1px solid $light-grey;
+	text-decoration: none;
+
+	transition: background-color 0.5s ease;
+
+	&:hover {
+		background-color: white;
+		color: $darker-grey;
+		text-decoration: none;
+	}
+	&.focus {
+		background-color: white;
+		color: $darker-grey;
+	}
+	&:focus {
+		background-color: white;
+		color: $darker-grey;
+	}
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    outline: 0;
+}
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $black-alpha5;
+}
+
+.modal-dialog {
+    @include mappy-bp(large) {
+        width: 800px;
+        margin: 30px auto;
+    }
+
+    position: relative;
+}
+
+.modal-content {
+	padding-bottom: 3rem;
+    position: relative;
+    background-color: white;
+    background-clip: padding-box;
+    outline: 0;
+}
+
+.c-modal--close {
+    appearance: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    border: 0;
+    font-size: 2.25rem;
+    color: black;
+    width: 44px;
+    height: 44px;
+    float: right;
+    position: relative;
+    line-height: 34px;
+    background-color: transparent; 
+
+    &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+    }
+
+    &:after {
+        content: "⨯";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 5px;
+        bottom: 0;
+        margin: auto;
+    }
+}
+
+.c-modal--header {
+	height: 40px;
+}
+
+.c-modal--content {
+	color: $grey;
+	text-align: center;
+	font-size: 1.25rem;
+}
+
+.c-modal--title {
+	color: black;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.c-image--expander {
+    margin-top: 3rem;
+    position: relative;
+    cursor: pointer;
+
+    &:before {
+        content: "+";
+        border: 1px solid white;
+        font-size: 1.5rem;
+        padding: 3px 10px; 
+        color: white;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+    }
+}
+
+.c-image--expander__mts {
+    @extend .c-image--expander;
+
+    margin-top: 10px;
+}
+
+.c-image--expander__mtn {
+    @extend .c-image--expander;
+
+    margin-top: 0;
+}
+
+footer {
+    @include mappy-bp(large) {
+        margin: 5rem 0 1rem;
+    }
+
+    text-align: center;
+    color: $white-alpha1;
+    position: relative;
+    margin: 2rem 0 1rem;
+    padding-top: 1rem;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+
+    &:before {
+        content: "";
+        border-top: 1px solid $white-alpha1;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        width: 10%;
+        margin: auto;
+    }
+}

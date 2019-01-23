@@ -1,0 +1,45 @@
+// ==========
+// Objects
+// ==========
+.o-anchor {
+    display: block;
+    position: relative;
+    /* top: -100px; */
+    visibility: hidden;
+    // top: -($mobileInitialHeight);
+}
+
+// Buttons
+.o--btn__downwards {
+    background-color: white;
+    cursor: pointer;
+    padding: 0.1875rem;
+    font-size: 1.75rem;
+    height: 3.125rem;
+    width: 3.125rem;
+    border-radius: 50%;
+    border: 3px solid $grey;
+    margin: 2.1875rem auto; 
+
+    a {
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+// Form-related
+
+
+// Modal-related
+
+
+// Grid
+.o-gutless-grid--span4 {
+    @include mappy-bp(xlarge) {
+        width: 33.3334%;
+        float: left;
+    }
+
+    position: relative;
+}

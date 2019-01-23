@@ -1,0 +1,128 @@
+// ============
+// Home styling
+// ============
+.c-project-title {
+	text-transform: uppercase;
+	float: right;
+	font-size: 1.25rem;
+	font-weight: bold;
+	line-height: 34px;
+}
+
+.c-logo {
+	color: $grey;
+	background-color: $dark-grey;
+	display: inline-block;
+	padding: 0.625rem 1rem;
+}
+
+.c-page--title {
+	@include mappy-bp(large) {
+		font-size: 4.5rem;
+	}
+
+	font-size: 3rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 1.25rem;
+}
+
+.c-slogan {
+	color: $light-grey;
+	text-transform: uppercase;
+	font-size: 0.875rem;
+	font-weight: bold;
+}
+
+.c-page-summary {
+	@include mappy-bp(large) {
+		width: 80%;
+		font-size: 1.5rem;
+	}
+
+	color: $light-grey;
+	font-size: 1.25rem;
+	line-height: 1.4;
+	margin: 1rem auto 3rem;
+}
+
+.c-page-blurb {
+	@include mappy-bp(large) {
+		width: 50%;
+		font-size: 1rem;
+	}
+
+	color: $light-grey;
+	font-size: 0.75rem;
+	line-height: 1.4;
+	margin: 1rem auto 3rem;
+}
+
+.c-breakout {
+	@include mappy-bp(large) {
+		margin-top: 2rem;
+	}
+
+	background-color: white;
+	color: $light-grey; 
+	margin-top: 4rem;
+}
+
+.c-breakout-title {
+	color: black;
+	text-transform: uppercase;
+	padding-bottom: 0.5rem;
+	margin-bottom: 1rem;
+	position: relative;
+
+	&:after {
+		content: "";
+		border-bottom: 1px solid $black-alpha3;
+		height: 1px; 
+		width: 8%;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
+}
+
+.c-caption {
+	@include mappy-bp(large) {
+		text-align: right;
+	}
+
+	border-top: 1px solid white;
+	color: $light-grey;
+	line-height: 1.4;
+}
+
+.c-caption--title {
+	font-weight: bold;
+	text-transform: uppercase;
+	padding-top: 1rem;
+	color: white;
+}
+
+.c-footer--projects {
+	text-align: center;
+	color: $light-grey;
+}
+
+.c-footer--projects__header {
+	color: white;
+	text-transform: uppercase;
+	margin-bottom: 0;
+}
+
+.c-footer--projects__list {
+	margin-top: 2rem;
+}
+
+.c-footer--projects__title {
+	color: white;
+	text-transform: uppercase;
+	font-size: 0.875rem;
+	font-weight: bold;
+	letter-spacing: 0.25rem;
+	margin-top: 1rem;
+}
