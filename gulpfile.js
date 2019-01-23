@@ -194,8 +194,8 @@ gulp.task('watch', function () {
              */
             
             //console.log('file deleted');
-            //console.log(path.relative('./', ev.path).replace('app\\assets\\','public\\'));
-            del(path.relative('./', ev.path).replace('dev\\','public\\'));
+            // console.log(path.relative('./', ev.path).replace('dev/','public/'));
+            del(path.relative('./', ev.path).replace('dev/','public/'));
          }
     });
 });
